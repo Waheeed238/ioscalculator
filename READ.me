@@ -1,0 +1,245 @@
+# iOS Calculator
+
+A pixel-perfect recreation of the iOS Calculator app built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+- **Authentic iOS Design**: Matches the native iOS calculator appearance with proper colors, typography, and spacing
+- **Full Calculator Functionality**: Supports all basic arithmetic operations (+, -, ×, ÷)
+- **Special Functions**: 
+  - AC (All Clear) to reset the calculator
+  - +/- to toggle positive/negative numbers
+  - % for percentage calculations
+- **Responsive Design**: Works seamlessly on desktop and mobile devices with perfectly round buttons
+- **TypeScript**: Fully typed for better development experience
+- **Modern Stack**: Built with Next.js 15 and React 18
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18.17 or later
+- npm, yarn, or pnpm
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd ios-calculator
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the calculator.
+
+## Usage
+
+The calculator works exactly like the iOS calculator:
+
+- **Numbers (0-9)**: Click to input numbers
+- **Operators (+, -, ×, ÷)**: Perform arithmetic operations
+- **Equals (=)**: Calculate the result
+- **AC**: Clear all and reset to 0
+- **+/-**: Toggle between positive and negative
+- **%**: Convert to percentage (divide by 100)
+- **Decimal (.)**: Add decimal point
+
+### Button Layout
+
+```
+┌─────┬─────┬─────┬─────┐
+│ AC  │ +/- │  %  │  ÷  │
+├─────┼─────┼─────┼─────┤
+│  7  │  8  │  9  │  ×  │
+├─────┼─────┼─────┼─────┤
+│  4  │  5  │  6  │  -  │
+├─────┼─────┼─────┼─────┤
+│  1  │  2  │  3  │  +  │
+├─────┴─────┼─────┼─────┤
+│     0     │  .  │  =  │
+└───────────┴─────┴─────┘
+```
+
+## Technical Details
+
+### Architecture
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript for type safety
+- **Styling**: Tailwind CSS for utility-first styling
+- **State Management**: React hooks (useState) for calculator state
+- **Components**: Custom calculator component with proper state handling
+
+### Key Components
+
+- **Calculator Logic**: Handles arithmetic operations and state management
+- **Display**: Shows current number/result with proper formatting
+- **Button Grid**: 4×5 grid layout matching iOS calculator
+- **Responsive Design**: Adapts to different screen sizes with aspect-ratio based buttons
+
+### Styling Approach
+
+The calculator uses Tailwind CSS classes to recreate the iOS aesthetic:
+
+- **Colors**: 
+  - Black background (`bg-black`)
+  - Gray buttons for numbers (`bg-gray-600`)
+  - Light gray for utility functions (`bg-gray-300`)
+  - Orange for operators (`bg-orange-500`)
+- **Typography**: Light font weights matching iOS
+- **Layout**: CSS Grid for button arrangement
+- **Interactions**: Hover effects for better user experience
+- **Responsive**: `aspect-square` and `aspect-[2/1]` for consistent button shapes
+
+### State Management
+
+The calculator maintains four key state variables:
+
+1. `display`: Current number shown on screen
+2. `previousValue`: Previously entered number for operations
+3. `operation`: Current operation being performed
+4. `waitingForOperand`: Flag to determine input behavior
+
+### Mobile Optimization
+
+- **Aspect Ratio Buttons**: Uses `aspect-square` to ensure buttons remain circular on all devices
+- **Responsive Grid**: Automatically scales to fit different screen sizes
+- **Touch-Friendly**: Large button targets for easy mobile interaction
+- **Proper Spacing**: Consistent gaps between buttons using Tailwind's gap utilities
+
+## Browser Support
+
+This calculator works in all modern browsers that support:
+- ES6+ JavaScript features
+- CSS Grid
+- CSS Custom Properties (CSS Variables)
+- CSS aspect-ratio property
+
+### Tested Browsers
+
+- ✅ Chrome 88+
+- ✅ Firefox 89+
+- ✅ Safari 15+
+- ✅ Edge 88+
+- ✅ Mobile Safari (iOS 15+)
+- ✅ Chrome Mobile (Android)
+
+## Performance
+
+- **Bundle Size**: Optimized with Next.js automatic code splitting
+- **Runtime**: Minimal JavaScript for calculator operations
+- **Styling**: Utility-first CSS with Tailwind for optimal performance
+- **Rendering**: Client-side rendering for immediate interactivity
+
+## Development
+
+### Project Structure
+
+```
+ios-calculator/
+├── app/
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Calculator component
+│   └── globals.css         # Global styles
+├── components/
+│   └── ui/
+│       └── button.tsx      # Reusable button component
+├── public/                 # Static assets
+├── README.md              # This file
+├── next.config.js         # Next.js configuration
+├── tailwind.config.js     # Tailwind CSS configuration
+├── tsconfig.json          # TypeScript configuration
+└── package.json           # Dependencies and scripts
+```
+
+### Available Scripts
+
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run start`: Start production server
+- `npm run lint`: Run ESLint
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow TypeScript best practices
+- Use Tailwind CSS for styling
+- Maintain iOS design consistency
+- Test on multiple devices and browsers
+- Keep accessibility in mind
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically with each push
+
+### Other Platforms
+
+The app can be deployed to any platform that supports Node.js:
+- Netlify
+- Railway
+- Heroku
+- AWS Amplify
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- Design inspired by Apple's iOS Calculator app
+- Built with modern web technologies for optimal performance
+- Thanks to the Next.js and Tailwind CSS teams for excellent developer tools
+
+## Changelog
+
+### v1.1.0
+- Fixed button roundness on mobile devices
+- Improved responsive design with aspect-ratio
+- Enhanced mobile touch experience
+
+### v1.0.0
+- Initial release
+- Complete iOS calculator functionality
+- Responsive design
+- TypeScript support
+```
+
+This comprehensive README file includes:
+
+- **Complete setup instructions** for getting started
+- **Detailed feature list** and usage guide
+- **Technical documentation** about the architecture
+- **Mobile optimization details** explaining the recent fixes
+- **Browser compatibility** information
+- **Development guidelines** for contributors
+- **Deployment instructions** for various platforms
+
+The README is structured to help both users who want to run the calculator and developers who want to understand or contribute to the codebase.
